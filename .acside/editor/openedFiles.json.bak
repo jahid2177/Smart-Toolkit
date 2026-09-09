@@ -1,0 +1,20 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Smart_PDF_Toolkit/app/build.gradle",
+      "selection": {
+        "end": {
+          "column": 20,
+          "index": 325,
+          "line": 13
+        },
+        "start": {
+          "column": 19,
+          "index": 324,
+          "line": 13
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Smart_PDF_Toolkit/app/build.gradle"
+}

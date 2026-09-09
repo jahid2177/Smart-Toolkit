@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ── প্রধান অ্যাপ থিম (Material 3) ── -->
+    <style name="Theme.SmartPDFToolkit" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/accent_orange</item>
+        <item name="android:windowBackground">@drawable/bg_main_gradient</item>
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+
+    <!-- ── Splash Screen থিম ── -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/dark_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.SmartPDFToolkit</item>
+    </style>
+
+    <!--
+        ── Sub-Activity থিম (PassportMaker, PdfToDocx, PdfToExcel) ──
+        Material3 parent ব্যবহার করা হয়েছে যাতে
+        colorOnSurfaceVariant ইত্যাদি M3 attr কাজ করে।
+        আগে Theme.MaterialComponents ছিল — সেটি crash করত।
+    -->
+    <style name="Theme.SmartPDF.SubActivity" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_orange</item>
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+
+</resources>

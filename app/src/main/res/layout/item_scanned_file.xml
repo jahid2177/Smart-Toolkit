@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:layout_margin="6dp"
+     app:cardElevation="2dp"
+     app:cardBackgroundColor="#2A2A2A"
+     app:cardCornerRadius="12dp">
+
+    <RelativeLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent">
+
+        <ImageView
+             android:layout_height="160dp"
+             android:layout_width="match_parent"
+             android:scaleType="centerCrop"
+             android:background="#E0E0E0"
+             android:id="@+id/ivThumbnail" />
+
+        <View
+             android:layout_height="160dp"
+             android:layout_width="match_parent"
+             android:visibility="gone"
+             android:background="#6600BFA5"
+             android:id="@+id/selectionOverlay" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:background="@drawable/bg_page_count"
+             android:layout_margin="8dp"
+             android:paddingVertical="4dp"
+             android:layout_alignParentEnd="true"
+             android:textSize="11sp"
+             android:textColor="@color/white"
+             android:layout_alignBottom="@id/ivThumbnail"
+             android:paddingHorizontal="8dp"
+             android:id="@+id/tvPageCountBadge"
+             android:text="1 Page" />
+
+        <CheckBox
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:visibility="gone"
+             android:clickable="false"
+             android:layout_margin="4dp"
+             android:buttonTint="#00BFA5"
+             android:layout_alignParentEnd="true"
+             android:layout_alignParentTop="true"
+             android:id="@+id/cbSelect" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_below="@id/ivThumbnail"
+             android:padding="12dp"
+             android:orientation="vertical">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:ellipsize="middle"
+                 android:textSize="14sp"
+                 android:textColor="@color/white"
+                 android:singleLine="true"
+                 android:id="@+id/tvFileName"
+                 android:text="Document"
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:textSize="12sp"
+                 android:textColor="#AAAAAA"
+                 android:layout_marginTop="4dp"
+                 android:id="@+id/tvFileDate"
+                 android:text="02/27/2026" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

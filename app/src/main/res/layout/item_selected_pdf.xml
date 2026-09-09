@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:layout_margin="8dp"
+     app:cardBackgroundColor="#1E1E1E"
+     app:cardCornerRadius="12dp">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center_vertical"
+         android:padding="12dp"
+         android:orientation="horizontal">
+
+        <ImageView
+             android:layout_height="40dp"
+             android:layout_width="40dp"
+             android:src="@drawable/ic_pdf_to_docx"
+             app:tint="#FF9800" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:orientation="vertical"
+             android:layout_marginStart="16dp"
+             android:layout_weight="1">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:ellipsize="middle"
+                 android:textColor="@color/white"
+                 android:singleLine="true"
+                 android:id="@+id/tvFileName"
+                 android:text="document.pdf"
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="12sp"
+                 android:textColor="#AAAAAA"
+                 android:id="@+id/tvPageCount"
+                 android:text="12 Pages" />
+
+        </LinearLayout>
+
+        <ImageView
+             android:layout_height="24dp"
+             android:layout_width="24dp"
+             android:src="@android:drawable/ic_menu_close_clear_cancel"
+             app:tint="#F44336"
+             android:id="@+id/btnRemove" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

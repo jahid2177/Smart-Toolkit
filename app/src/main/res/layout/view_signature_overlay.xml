@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/ivSignatureImage"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/transparent" 
+        android:scaleType="fitCenter" />
+
+    <ImageView
+        android:id="@+id/btnDelete"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="top|start"
+        android:background="@drawable/bg_circle_red"
+        android:padding="6dp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <ImageView
+        android:id="@+id/btnResize"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/bg_circle_accent"
+        android:padding="6dp"
+        android:src="@drawable/ic_resize" />
+
+</FrameLayout>

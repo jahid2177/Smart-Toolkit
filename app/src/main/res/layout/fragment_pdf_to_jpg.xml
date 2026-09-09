@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#1B1514">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:padding="16dp"
+         android:orientation="vertical"
+         android:id="@+id/headerLayout">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:orientation="horizontal">
+
+            <ImageView
+                 android:layout_height="24dp"
+                 android:layout_width="24dp"
+                 android:src="@android:drawable/ic_menu_revert"
+                 app:tint="@color/white"
+                 android:id="@+id/btnBack" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="18sp"
+                 android:textColor="@color/white"
+                 android:layout_marginStart="16dp"
+                 android:text="Settings"
+                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="24sp"
+             android:textColor="@color/white"
+             android:layout_marginTop="20dp"
+             android:text="PDF to JPG"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:visibility="gone"
+             android:textSize="14sp"
+             android:textColor="#D1C4E9"
+             android:layout_marginTop="4dp"
+             android:id="@+id/tvSubtitle"
+             android:text="⚠ Each page will be exported as JPG" />
+
+    </LinearLayout>
+
+    <Button
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_centerInParent="true"
+         android:backgroundTint="#F2A999"
+         android:textColor="#000000"
+         android:id="@+id/btnSelectPdf"
+         android:text="Select PDF File" />
+
+    <androidx.recyclerview.widget.RecyclerView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:visibility="gone"
+         android:layout_below="@id/headerLayout"
+         android:layout_above="@+id/bottomOptions"
+         android:padding="8dp"
+         android:clipToPadding="false"
+         android:id="@+id/rvPages" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="#1B1514"
+         android:padding="16dp"
+         android:orientation="vertical"
+         android:visibility="gone"
+         android:layout_alignParentBottom="true"
+         android:id="@+id/bottomOptions">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textColor="#BBB"
+             android:text="Image Quality:"
+             android:textSize="13sp" />
+
+        <Spinner
+             android:layout_height="50dp"
+             android:layout_width="match_parent"
+             android:background="#2A2A2A"
+             android:padding="10dp"
+             android:layout_marginTop="6dp"
+             android:id="@+id/spinnerQuality" />
+
+        <CheckBox
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="12sp"
+             android:textColor="#BBB"
+             android:layout_marginTop="8dp"
+             android:checked="true"
+             android:id="@+id/cbAutoCrop"
+             android:text="✨ AI Auto-Crop (Remove empty margins)" />
+
+        <com.google.android.material.button.MaterialButton
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             app:backgroundTint="#F2A999"
+             app:iconTint="#000000"
+             android:textColor="#000000"
+             app:icon="@android:drawable/ic_menu_save"
+             android:layout_marginTop="8dp"
+             app:cornerRadius="16dp"
+             android:id="@+id/btnConvert"
+             android:text="Extract as JPG Images" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:visibility="gone"
+         android:background="#DD121212"
+         android:clickable="true"
+         android:focusable="true"
+         android:id="@+id/loadingOverlay">
+
+        <ProgressBar
+             android:layout_height="wrap_content"
+             android:layout_width="250dp"
+             android:layout_centerInParent="true"
+             android:max="100"
+             android:progressTint="#F2A999"
+             style="?android:attr/progressBarStyleHorizontal"
+             android:id="@+id/progressBar" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/progressBar"
+             android:layout_centerHorizontal="true"
+             android:textColor="@color/white"
+             android:layout_marginTop="12dp"
+             android:id="@+id/tvSelectedFile"
+             android:text="Processing..."
+             android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

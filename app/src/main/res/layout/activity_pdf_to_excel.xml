@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#1B1514">
+
+    <!-- Header -->
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:padding="16dp"
+         android:orientation="vertical"
+         android:id="@+id/headerLayout">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:orientation="horizontal">
+
+            <ImageView
+                 android:layout_height="24dp"
+                 android:layout_width="24dp"
+                 android:src="@android:drawable/ic_menu_revert"
+                 app:tint="@color/white"
+                 android:background="?attr/selectableItemBackgroundBorderless"
+                 android:id="@+id/btnBack" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="18sp"
+                 android:textColor="@color/white"
+                 android:layout_marginStart="16dp"
+                 android:text="Settings"
+                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="24sp"
+             android:textColor="@color/white"
+             android:layout_marginTop="20dp"
+             android:text="PDF to Excel"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:visibility="gone"
+             android:textSize="13sp"
+             android:textColor="#F2A999"
+             android:layout_marginTop="4dp"
+             android:id="@+id/tvSubtitle"
+             android:text="" />
+
+    </LinearLayout>
+
+    <!-- Select button (center, shown before file picked) -->
+    <Button
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_centerInParent="true"
+         android:backgroundTint="#F2A999"
+         android:textColor="#000000"
+         android:id="@+id/btnSelectPdf"
+         android:text="Select PDF File" />
+
+    <!-- Page thumbnail grid -->
+    <androidx.recyclerview.widget.RecyclerView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:visibility="gone"
+         android:layout_below="@id/headerLayout"
+         android:layout_above="@+id/bottomOptions"
+         android:padding="8dp"
+         android:clipToPadding="false"
+         android:id="@+id/rvPages" />
+
+    <!-- Bottom options panel -->
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="#241C1B"
+         android:padding="14dp"
+         android:orientation="vertical"
+         android:visibility="gone"
+         android:layout_alignParentBottom="true"
+         android:id="@+id/bottomOptions">
+
+        <!-- Extraction mode selector -->
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textColor="#BBB"
+             android:textSize="12sp"
+             android:text="Extraction Mode" />
+
+        <RadioGroup
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_marginTop="6dp"
+             android:id="@+id/rgMode">
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:textColor="@color/white"
+                 android:textSize="12sp"
+                 android:buttonTint="#F2A999"
+                 android:checked="true"
+                 android:id="@+id/rbAuto"
+                 android:text="Auto Detect" />
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:textColor="@color/white"
+                 android:textSize="12sp"
+                 android:buttonTint="#F2A999"
+                 android:id="@+id/rbTable"
+                 android:text="Table Mode" />
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:textColor="@color/white"
+                 android:textSize="12sp"
+                 android:buttonTint="#F2A999"
+                 android:id="@+id/rbRaw"
+                 android:text="Raw Text" />
+
+        </RadioGroup>
+
+        <!-- Options row -->
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_marginTop="8dp">
+
+            <CheckBox
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:textColor="#BBB"
+                 android:textSize="12sp"
+                 android:buttonTint="#F2A999"
+                 android:checked="true"
+                 android:id="@+id/cbHeaderRow"
+                 android:text="Bold Header" />
+
+            <CheckBox
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:textColor="#BBB"
+                 android:textSize="12sp"
+                 android:buttonTint="#F2A999"
+                 android:checked="true"
+                 android:id="@+id/cbAutoType"
+                 android:text="Auto Type" />
+
+            <CheckBox
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:textColor="#BBB"
+                 android:textSize="12sp"
+                 android:buttonTint="#F2A999"
+                 android:checked="true"
+                 android:id="@+id/cbAutoWidth"
+                 android:text="Auto Width" />
+
+        </LinearLayout>
+
+        <!-- File info + Convert button -->
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:layout_marginTop="8dp">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:textSize="12sp"
+                 android:textColor="#F2A999"
+                 android:id="@+id/tvSelectedFile"
+                 android:text="" />
+
+            <com.google.android.material.button.MaterialButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 app:backgroundTint="#F2A999"
+                 app:iconTint="#000000"
+                 android:textColor="#000000"
+                 app:icon="@android:drawable/ic_menu_save"
+                 app:cornerRadius="16dp"
+                 android:id="@+id/btnConvert"
+                 android:text="Convert to Excel" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Loading overlay with detailed progress -->
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:visibility="gone"
+         android:background="#EE121212"
+         android:gravity="center"
+         android:clickable="true"
+         android:orientation="vertical"
+         android:id="@+id/loadingLayout">
+
+        <ProgressBar
+             android:layout_height="48dp"
+             android:layout_width="48dp"
+             android:indeterminateTint="#F2A999" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textColor="@color/white"
+             android:textSize="15sp"
+             android:layout_marginTop="16dp"
+             android:gravity="center"
+             android:id="@+id/tvProgress"
+             android:text="Processing..."
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textColor="#BBB"
+             android:textSize="12sp"
+             android:layout_marginTop="6dp"
+             android:gravity="center"
+             android:id="@+id/tvProgressDetail"
+             android:text="" />
+
+        <ProgressBar
+             android:layout_height="8dp"
+             android:layout_width="220dp"
+             android:layout_marginTop="16dp"
+             android:max="100"
+             android:progressTint="#F2A999"
+             android:progressBackgroundTint="#3D302E"
+             style="?android:attr/progressBarStyleHorizontal"
+             android:id="@+id/pbPages" />
+
+    </LinearLayout>
+
+</RelativeLayout>

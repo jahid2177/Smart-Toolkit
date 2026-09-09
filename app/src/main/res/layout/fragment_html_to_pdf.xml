@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_main_gradient">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HTML TO PDF"
+        android:textColor="@color/accent_orange"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/etHtml"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="Paste HTML here... &lt;h1&gt;Hello&lt;/h1&gt;"
+        android:background="#22FFFFFF"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:textColorHint="#88FFFFFF"/>
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:text="CONVERT TO PDF"
+        android:backgroundTint="@color/accent_orange"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

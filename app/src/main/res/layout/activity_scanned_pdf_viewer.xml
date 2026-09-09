@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#121212">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center_vertical"
+         android:background="#1E1E1E"
+         android:padding="16dp"
+         android:orientation="horizontal"
+         android:id="@+id/topBar">
+
+        <ImageView
+             android:layout_height="24dp"
+             android:layout_width="24dp"
+             android:src="@android:drawable/ic_menu_revert"
+             android:background="?attr/selectableItemBackgroundBorderless"
+             app:tint="@color/white"
+             android:id="@+id/btnBack" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:ellipsize="end"
+             android:textSize="18sp"
+             android:textColor="@color/white"
+             android:singleLine="true"
+             android:maxWidth="180dp"
+             android:layout_marginStart="16dp"
+             android:id="@+id/tvFileName"
+             android:text="Document_Name"
+             android:textStyle="bold" />
+
+        <ImageView
+             android:layout_height="20dp"
+             android:layout_width="20dp"
+             android:src="@android:drawable/ic_menu_edit"
+             android:background="?attr/selectableItemBackgroundBorderless"
+             app:tint="#00BFA5"
+             android:layout_marginStart="8dp"
+             android:id="@+id/btnEditName" />
+
+        <View
+             android:layout_height="0dp"
+             android:layout_width="0dp"
+             android:layout_weight="1" />
+
+        <ImageView
+             android:layout_height="24dp"
+             android:layout_width="24dp"
+             android:src="@android:drawable/ic_menu_sort_by_size"
+             android:background="?attr/selectableItemBackgroundBorderless"
+             app:tint="@color/white"
+             android:id="@+id/btnGridView" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:layout_below="@id/topBar"
+         android:layout_above="@+id/bottomBar"
+         android:paddingBottom="16dp"
+         android:clipToPadding="false"
+         android:id="@+id/pdfVerticalView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:visibility="gone"
+         android:layout_below="@id/topBar"
+         android:layout_above="@+id/bottomBar"
+         android:layout_margin="8dp"
+         android:id="@+id/pdfGridView" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="#1E1E1E"
+         android:orientation="horizontal"
+         android:paddingBottom="12dp"
+         android:layout_alignParentBottom="true"
+         android:id="@+id/bottomBar"
+         android:paddingTop="12dp">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:gravity="center"
+             android:background="?attr/selectableItemBackgroundBorderless"
+             android:orientation="vertical"
+             android:layout_weight="1"
+             android:id="@+id/btnAddPages">
+
+            <ImageView
+                 android:layout_height="24dp"
+                 android:layout_width="24dp"
+                 android:src="@android:drawable/ic_menu_camera"
+                 app:tint="@color/white" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="12sp"
+                 android:textColor="@color/white"
+                 android:layout_marginTop="4dp"
+                 android:text="Add" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:gravity="center"
+             android:background="?attr/selectableItemBackgroundBorderless"
+             android:orientation="vertical"
+             android:layout_weight="1"
+             android:id="@+id/btnShare">
+
+            <ImageView
+                 android:layout_height="24dp"
+                 android:layout_width="24dp"
+                 android:src="@android:drawable/ic_menu_share"
+                 app:tint="@color/white" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="12sp"
+                 android:textColor="@color/white"
+                 android:layout_marginTop="4dp"
+                 android:text="Share" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

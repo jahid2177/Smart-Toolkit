@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@drawable/bg_main_gradient"
+     android:padding="16dp"
+     android:orientation="vertical">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_marginBottom="20dp"
+         android:gravity="center"
+         android:textSize="18sp"
+         android:textColor="@color/accent_orange"
+         android:text="PDF TO TEXT"
+         android:textStyle="bold" />
+
+    <Button
+         android:layout_height="60dp"
+         android:layout_width="match_parent"
+         android:backgroundTint="@color/dark_card_bg"
+         android:textColor="@color/white"
+         android:id="@+id/btnSelectPdf"
+         android:text="Select PDF File" />
+
+    <ProgressBar
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:visibility="gone"
+         android:layout_margin="16dp"
+         android:id="@+id/progressBar"
+         android:layout_gravity="center" />
+
+    <ScrollView
+         android:layout_height="0dp"
+         android:layout_width="match_parent"
+         android:background="#22FFFFFF"
+         android:padding="12dp"
+         android:layout_marginTop="16dp"
+         android:layout_weight="1">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:textSize="14sp"
+             android:textColor="@color/white"
+             android:id="@+id/tvExtractedText"
+             android:text="Extracted text will appear here..." />
+
+    </ScrollView>
+
+    <Button
+         android:layout_height="60dp"
+         android:layout_width="match_parent"
+         android:backgroundTint="@color/accent_orange"
+         android:textColor="@color/black"
+         android:enabled="false"
+         android:layout_marginTop="16dp"
+         android:id="@+id/btnSaveText"
+         android:text="SAVE AS .TXT" />
+
+</LinearLayout>

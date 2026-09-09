@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.convert.smartpdf.ui.HomeFragment"
+        android:label="Home">
+        
+        <action android:id="@+id/action_home_to_imgToPdf" app:destination="@id/imageToPdfFragment" />
+        <action android:id="@+id/action_home_to_mergePdf" app:destination="@id/mergePdfFragment" />
+        <action android:id="@+id/action_home_to_textToPdf" app:destination="@id/textToPdfFragment" />
+        <action android:id="@+id/action_home_to_imageResizer" app:destination="@id/imageResizerFragment" />
+        <action android:id="@+id/action_home_to_pdfToText" app:destination="@id/pdfToTextFragment" />
+        <action android:id="@+id/action_home_to_pdfToJpg" app:destination="@id/pdfToJpgFragment" />
+        <action android:id="@+id/action_home_to_splitPdf" app:destination="@id/splitPdfFragment" />
+        <action android:id="@+id/action_home_to_compressPdf" app:destination="@id/compressPdfFragment" />
+        <action android:id="@+id/action_home_to_protectPdf" app:destination="@id/protectPdfFragment" />
+        <action android:id="@+id/action_home_to_addWatermark" app:destination="@id/addWatermarkFragment" />
+        <action android:id="@+id/action_home_to_rotatePdf" app:destination="@id/rotatePdfFragment" />
+        <action android:id="@+id/action_home_to_organizePdf" app:destination="@id/organizePdfFragment" />
+        <action android:id="@+id/action_home_to_htmlToPdf" app:destination="@id/htmlToPdfFragment" />
+        
+        <action android:id="@+id/action_home_to_signPdf" app:destination="@id/signPdfFragment" />
+        <action android:id="@+id/action_home_to_resizePdf" app:destination="@id/resizePdfFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/imageToPdfFragment" android:name="com.convert.smartpdf.ui.ImageToPdfFragment" android:label="Image to PDF" />
+    <fragment android:id="@+id/mergePdfFragment" android:name="com.convert.smartpdf.ui.MergePdfFragment" android:label="Merge PDF" />
+    <fragment android:id="@+id/textToPdfFragment" android:name="com.convert.smartpdf.ui.TextToPdfFragment" android:label="Text to PDF" />
+    <fragment android:id="@+id/imageResizerFragment" android:name="com.convert.smartpdf.ui.ImageResizerFragment" android:label="Image Resizer" />
+    <fragment android:id="@+id/pdfToTextFragment" android:name="com.convert.smartpdf.ui.PdfToTextFragment" android:label="PDF to Text" tools:layout="@layout/fragment_pdf_to_text" />
+    <fragment android:id="@+id/pdfToJpgFragment" android:name="com.convert.smartpdf.ui.PdfToJpgFragment" android:label="PDF to JPG" tools:layout="@layout/fragment_pdf_to_jpg" />
+    <fragment android:id="@+id/splitPdfFragment" android:name="com.convert.smartpdf.ui.SplitPdfFragment" android:label="Split PDF" tools:layout="@layout/fragment_split_pdf" />
+    <fragment android:id="@+id/compressPdfFragment" android:name="com.convert.smartpdf.ui.CompressPdfFragment" android:label="Compress PDF" tools:layout="@layout/fragment_compress_pdf" />
+    <fragment android:id="@+id/protectPdfFragment" android:name="com.convert.smartpdf.ui.ProtectPdfFragment" android:label="Protect PDF" tools:layout="@layout/fragment_protect_pdf" />
+    <fragment android:id="@+id/addWatermarkFragment" android:name="com.convert.smartpdf.ui.AddWatermarkFragment" android:label="Add Watermark" tools:layout="@layout/fragment_add_watermark" />
+    <fragment android:id="@+id/rotatePdfFragment" android:name="com.convert.smartpdf.ui.RotatePdfFragment" android:label="Rotate PDF" tools:layout="@layout/fragment_rotate_pdf" />
+    <fragment android:id="@+id/organizePdfFragment" android:name="com.convert.smartpdf.ui.OrganizePdfFragment" android:label="Organize PDF" tools:layout="@layout/fragment_organize_pdf" />
+    <fragment android:id="@+id/htmlToPdfFragment" android:name="com.convert.smartpdf.ui.HtmlToPdfFragment" android:label="HTML to PDF" tools:layout="@layout/fragment_html_to_pdf" />
+
+    <fragment
+        android:id="@+id/signPdfFragment"
+        android:name="com.convert.smartpdf.ui.SignPdfFragment"
+        android:label="Sign PDF"
+        tools:layout="@layout/fragment_sign_pdf" />
+
+    <fragment
+        android:id="@+id/resizePdfFragment"
+        android:name="com.convert.smartpdf.ui.ResizePdfFragment"
+        android:label="Resize PDF"
+        tools:layout="@layout/fragment_resize_pdf" />
+
+</navigation>

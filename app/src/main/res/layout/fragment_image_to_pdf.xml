@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#121212">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="#1E1E1E"
+         android:gravity="center_vertical"
+         android:padding="16dp"
+         android:orientation="horizontal"
+         android:id="@+id/topBar">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="20sp"
+             android:textColor="#FF9800"
+             android:text="AI IMAGE TO PDF"
+             android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:weightSum="2"
+         android:layout_below="@id/topBar"
+         android:padding="16dp"
+         android:orientation="horizontal"
+         android:id="@+id/actionButtons">
+
+        <Button
+             android:layout_height="55dp"
+             android:layout_width="0dp"
+             app:icon="@android:drawable/ic_menu_gallery"
+             android:layout_marginEnd="8dp"
+             app:cornerRadius="12dp"
+             android:backgroundTint="#2D2D2D"
+             app:iconTint="#00BFA5"
+             android:textColor="@color/white"
+             android:layout_weight="1"
+             android:id="@+id/btnPickImages"
+             android:text="Gallery" />
+
+        <Button
+             android:layout_height="55dp"
+             android:layout_width="0dp"
+             app:icon="@android:drawable/ic_menu_camera"
+             app:cornerRadius="12dp"
+             android:backgroundTint="#2D2D2D"
+             app:iconTint="#FF9800"
+             android:textColor="@color/white"
+             android:layout_marginStart="8dp"
+             android:layout_weight="1"
+             android:id="@+id/btnAiScan"
+             android:text="AI Scan" />
+
+    </LinearLayout>
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_marginBottom="8dp"
+         android:layout_below="@id/actionButtons"
+         android:layout_centerHorizontal="true"
+         android:textColor="#888888"
+         android:id="@+id/tvStatus"
+         android:text="No images selected" />
+
+    <androidx.recyclerview.widget.RecyclerView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:layout_below="@id/tvStatus"
+         android:layout_above="@id/bottomSettingsPanel"
+         android:padding="8dp"
+         android:clipToPadding="false"
+         android:id="@+id/rvImages" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="#1E1E1E"
+         android:padding="16dp"
+         android:orientation="vertical"
+         android:layout_alignParentBottom="true"
+         android:id="@+id/bottomSettingsPanel">
+
+        <CheckBox
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="13sp"
+             android:textColor="#BBB"
+             android:checked="true"
+             android:id="@+id/cbAutoFitA4"
+             android:text="✨ Smart Fit to A4 Page" />
+
+        <Button
+             android:layout_height="60dp"
+             android:layout_width="match_parent"
+             app:cornerRadius="12dp"
+             android:backgroundTint="#FF9800"
+             android:textColor="@color/black"
+             android:enabled="false"
+             android:layout_marginTop="16dp"
+             android:id="@+id/btnConvert"
+             android:text="AI CONVERT TO PDF"
+             android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:visibility="gone"
+         android:background="#CC121212"
+         android:clickable="true"
+         android:focusable="true"
+         android:id="@+id/loadingOverlay">
+
+        <ProgressBar
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_centerInParent="true"
+             android:indeterminateTint="#FF9800" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_centerInParent="true"
+             android:textColor="@color/white"
+             android:layout_marginTop="50dp"
+             android:text="Optimizing and Creating PDF..."
+             android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

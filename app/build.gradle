@@ -1,0 +1,109 @@
+plugins { // 🔥 'p' ছোট হাতের করে দেওয়া হয়েছে
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.convert.smartpdf'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.convert.smartpdf"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true 
+        
+        // 🔥 ম্যাজিক ট্রিক: অ্যাপের সাইজ ১৫২ এমবি থেকে কমানোর জন্য
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    // 🔥 রিলিজের সময় অপ্রয়োজনীয় কোড এবং রিসোর্স মুছে সাইজ আরও কমানোর জন্য
+    buildTypes {
+        release {
+            minifyEnabled true 
+            shrinkResources true 
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding false 
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        resources {
+            pickFirst 'META-INF/MPL-2.0.txt'
+            pickFirst 'META-INF/LGPL-2.1.md'
+            pickFirst 'META-INF/LGPL-2.1.txt'
+            pickFirst 'META-INF/LICENSES.md'
+            pickFirst 'META-INF/LICENSE.txt'
+            pickFirst 'META-INF/LICENSE'
+            pickFirst 'META-INF/license.txt'
+            pickFirst 'META-INF/NOTICE.txt'
+            pickFirst 'META-INF/NOTICE'
+            pickFirst 'META-INF/notice.txt'
+            pickFirst 'META-INF/ASL2.0'
+            pickFirst 'META-INF/*.kotlin_module'
+            pickFirst 'META-INF/DEPENDENCIES'
+        }
+    }
+}
+
+dependencies {
+    // Core Android Libraries
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // 🔥 Modern Splash Screen API (স্প্ল্যাশ স্ক্রিনের জন্য)
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
+    // CameraX (ডকুমেন্ট স্ক্যান করার জন্য)
+    def camerax_version = "1.3.1"
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-view:${camerax_version}"
+
+    // Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.6'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.6'
+    
+    // ML Kit & Google Vision
+    implementation 'com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1'
+    implementation 'com.google.mlkit:text-recognition:16.0.0'
+    implementation 'com.google.mlkit:face-detection:16.1.6'
+    implementation 'com.google.mlkit:segmentation-selfie:16.0.0-beta4'
+    
+    // Utilities & Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3'
+    implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'com.github.yalantis:ucrop:2.2.8'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+    
+    // Unit Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

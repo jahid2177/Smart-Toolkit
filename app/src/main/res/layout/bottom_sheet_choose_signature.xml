@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:background="#1E1E1E"
+     android:padding="24dp"
+     android:orientation="vertical">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_marginBottom="20dp"
+         android:textSize="18sp"
+         android:textColor="@color/white"
+         android:text="Choose Signature"
+         android:textStyle="bold" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:orientation="horizontal">
+
+        <Button
+             android:layout_height="60dp"
+             android:layout_width="0dp"
+             android:backgroundTint="#3E3431"
+             android:textAllCaps="false"
+             android:textColor="#E0E0E0"
+             android:layout_weight="1"
+             android:id="@+id/btnImportImage"
+             android:text="Import Image" />
+
+        <View
+             android:layout_height="match_parent"
+             android:layout_width="12dp" />
+
+        <Button
+             android:layout_height="60dp"
+             android:layout_width="0dp"
+             android:backgroundTint="#3E3431"
+             android:textAllCaps="false"
+             android:textColor="#E0E0E0"
+             android:layout_weight="1"
+             android:id="@+id/btnDrawNew"
+             android:text="Draw New" />
+
+    </LinearLayout>
+
+</LinearLayout>

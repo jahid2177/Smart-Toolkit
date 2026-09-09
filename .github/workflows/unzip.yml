@@ -1,9 +1,9 @@
-name: Unzip pcalculatorpro.zip to Root
+name: Unzip SmartPDFToolkit.zip to Root
 
 on:
   push:
     paths:
-      - 'pcalculatorpro.zip'
+      - 'SmartPDFToolkit.zip'
   workflow_dispatch:
 
 jobs:
@@ -19,16 +19,16 @@ jobs:
 
       - name: Extract and Move Files to Root
         run: |
-          if [ -f "pcalculatorpro.zip" ]; then
-            echo "Extracting pcalculatorpro.zip..."
+          if [ -f "SmartPDFToolkit.zip" ]; then
+            echo "Extracting SmartPDFToolkit.zip..."
             
             # ১. সাময়িক একটি Temp ফোল্ডারে Unzip করা হচ্ছে
-            unzip -o pcalculatorpro.zip -d temp_extracted/
+            unzip -o SmartPDFToolkit.zip -d temp_extracted/
             
             # ২. মূল Zip ফাইলটি মুছে ফেলা হচ্ছে
-            rm pcalculatorpro.zip
+            rm SmartPDFToolkit.zip
             
-            # ৩. Temp ফোল্ডারের ভেতরে যদি অন্য কোনো সিঙ্গেল ফোল্ডার থাকে (যেমন pcalculatorpro/), 
+            # ৩. Temp ফোল্ডারের ভেতরে যদি অন্য কোনো সিঙ্গেল ফোল্ডার থাকে (যেমন SmartPDFToolkit/), 
             # সেটির ভেতর থেকে ফাইল বের করা, অন্যথায় সরাসরি Temp থেকে ফাইল রুটে আনা
             INNER_DIR=$(find temp_extracted -mindepth 1 -maxdepth 1 -type d)
             FILE_COUNT=$(find temp_extracted -mindepth 1 -maxdepth 1 | wc -l)
@@ -46,7 +46,7 @@ jobs:
             # ৪. সাময়িক Temp ফোল্ডারটি মুছে ফেলা হচ্ছে
             rm -rf temp_extracted
           else
-            echo "pcalculatorpro.zip not found!"
+            echo "SmartPDFToolkit.zip not found!"
             exit 1
           fi
 
